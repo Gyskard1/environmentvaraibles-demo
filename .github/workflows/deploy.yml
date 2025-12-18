@@ -9,7 +9,7 @@ env:
 jobs:
   test:
     env:
-      MONGODB_CLUSTER_ADDRESS: mongodb+srv://fabianalonsomd_db_user:<db_password>@cluster0.n4jkehh.mongodb.net/?appName=Cluster0
+      MONGODB_CLUSTER_ADDRESS: "mongodb+srv://fabianalonsomd_db_user:<db_password>@cluster0.n4jkehh.mongodb.net/?appName=Cluster0"
       MONGODB_USERNAME: fabianalonsomd_db_user
       MONGODB_PASSWORD: Ru0F3mxvHpg6ZrN4
       PORT: 8080
@@ -29,7 +29,7 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
+        run: echo "MONGODB_USERNAME: $MONGODB_USERNAME"
   deploy:
     needs: test
     runs-on: ubuntu-latest
